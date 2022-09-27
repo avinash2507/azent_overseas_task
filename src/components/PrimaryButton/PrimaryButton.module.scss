@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+.primaryButton{
+  border:none;
+  outline: none;
+  padding: 1rem;
+  background: $white-color;
+  border: 1px solid $secorndary-color;
+  border-radius: 10px;
+  color: $secorndary-color;
+  width: 100%;
+  font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.2rem;
+}

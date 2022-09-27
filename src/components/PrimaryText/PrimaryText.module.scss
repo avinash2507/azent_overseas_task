@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+.primaryText {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1.002rem;
+  color: $primary-color;
+  margin-bottom: 0.4rem;
+}
