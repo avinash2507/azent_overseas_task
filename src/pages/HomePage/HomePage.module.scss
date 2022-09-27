@@ -1,4 +1,5 @@
 .homepageContainer {
+  margin: 1rem;
   .mainHeading {
     font-weight: 600;
     text-align: center;
@@ -9,12 +10,11 @@
   }
   .homePageContent {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 310px 1fr;
     gap: 2rem;
   }
   .productCards {
     display: flex;
-    align-items: center;
     gap: 2rem;
     flex-wrap: wrap;
   }
