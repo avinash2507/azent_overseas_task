@@ -1,6 +1,13 @@
 # Project Title
+There is LINK for Visit the site:https://event-remainder-task.vercel.app/
 
 EVENT REMAINDER :
+![Screenshot 2022-10-03 131625](https://user-images.githubusercontent.com/93754695/193527126-915bccfc-ec29-4222-9bdb-784ee2ff6029.png)
+![Screenshot 2022-10-03 131805](https://user-images.githubusercontent.com/93754695/193527192-d66d540d-40fa-4473-86e4-deafc0ea57ae.png)
+![Screenshot 2022-10-03 131842](https://user-images.githubusercontent.com/93754695/193527214-98ed6444-4ffe-4adb-a4d4-259ddcf10d06.png)
+![Screenshot 2022-10-03 132056](https://user-images.githubusercontent.com/93754695/193527232-bc3d6d9c-1964-49c5-959f-0eecf879976f.png)
+![Screenshot 2022-10-03 131914](https://user-images.githubusercontent.com/93754695/193527261-fea6f947-b0af-4f95-9f8a-aca55ec70ae7.png)
+
 
 ## Description
 
@@ -148,3 +155,4 @@ This project is licensed under the [AVINASH] License - see the LICENSE.md file f
 Inspiration, code snippets, etc.
 
 - [avinash](https://gist.github.com/avinash2507)
+
