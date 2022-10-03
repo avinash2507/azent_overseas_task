@@ -1,8 +1,10 @@
 @import '../../styles/variables.scss';
 
-.cardContainer{
-
+.cardContainer {
   background: $white-color;
-    border: 1px solid $gray-color;
-    border-radius: 20px;
+  border: 1px solid $gray-color;
+  border-radius: 20px;
+  @media screen and (max-width: 1040) {
+    width: 200px;
+  }
 }

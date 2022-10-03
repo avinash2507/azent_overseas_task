@@ -15,7 +15,7 @@ export const useProduct = () => {
       const data = await res.json();
       return setSideMenus(data);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
   useEffect(() => {

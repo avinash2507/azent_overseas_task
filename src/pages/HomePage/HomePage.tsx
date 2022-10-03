@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-expressions */
 import { useEffect, useState } from 'react';
+import PageHeaderComp from '../../components/PageHeaderComp/PageHeaderComp';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import SideMenu from '../../components/SideMenu/SideMenu';
 import styles from './HomePage.module.scss';
@@ -7,19 +9,26 @@ const HomePage = () => {
   const [sideMenus, setSideMenus] = useState([]);
   const [selectedMenu, setSelectedMenu] = useState(false);
   const [eventList, setEventList] = useState([]);
+  const selectedId = 2;
+  const handleIsSelected = (id: any) => setSelectedMenu(id);
 
   const getSideMenus = async () => {
     try {
       const res = await fetch('http://localhost:3000/CountryEvents.json');
       const data = await res.json();
+
       return setSideMenus(data);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
   useEffect(() => {
-    getSideMenus();
+    (async () => {
+      await getSideMenus();
+      handleIsSelected(selectedId);
+    })();
   }, []);
+
   const handleEventList = (menuId: any) => {
     const selectedMenuData: any = sideMenus.find(
       (sideMenu: any) => sideMenu.id === menuId,
@@ -30,10 +39,9 @@ const HomePage = () => {
     if (selectedMenu) handleEventList(selectedMenu);
   }, [selectedMenu]);
 
-  const handleIsSelected = (id: any) => setSelectedMenu(id);
-
   return (
     <div id="home_page" className={styles.homepageContainer}>
+      <PageHeaderComp />
       <h1 className={styles.mainHeading}>Explore Our Events</h1>
       <div className={styles.homePageContent}>
         <SideMenu

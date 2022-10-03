@@ -14,3 +14,9 @@
     margin: 0 0.96rem 1.4rem;
   }
 }
+@media only screen and (max-width: 1040px) {
+  .productCardContainer {
+    width: fit-content;
+    width: 260px;
+  }
+}

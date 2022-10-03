@@ -1,6 +1,6 @@
 @import '../../styles/variables.scss';
-.primaryButton{
-  border:none;
+.primaryButton {
+  border: none;
   outline: none;
   padding: 1rem;
   background: $white-color;
@@ -9,6 +9,14 @@
   color: $secorndary-color;
   width: 100%;
   font-weight: 500;
-    font-size: 1rem;
-    line-height: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+@media only screen and (max-width: 1040px) {
+  .primaryButton {
+    padding: 0.7rem;
+    color: $secorndary-color;
+    font-size: 0.7rem;
+    line-height: 0.9rem;
+  }
 }

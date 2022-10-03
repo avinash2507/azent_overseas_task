@@ -18,7 +18,7 @@ const SideMenu: FC<ISideMenu> = ({ sideMenus, onClick, selectedMenu }) => {
           key={id}
           onClick={() => onClick(id)}
         >
-          {country} {events.length}
+          {country} ({events.length})
         </MenuItems>
       ))}
     </aside>

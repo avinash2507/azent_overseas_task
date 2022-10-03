@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+.PageIcon {
+  width: 143px;
+  height: 73;
+  margin-left: 28px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.PageHeaderComp {
+  box-shadow: 0px 4px 20px rgba(85, 87, 88, 0.15);
+  width: 100%;
+  padding: 0px;
+  height: 73px;
+  background: $white-color;
+}

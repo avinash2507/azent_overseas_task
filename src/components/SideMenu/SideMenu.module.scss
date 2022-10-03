@@ -1,8 +1,25 @@
 @import '../../styles/variables.scss';
 .sideMenuContainer {
+  margin: 0rem 1rem 0rem;
   background: $white-color;
   box-shadow: 0px 4px 20px rgba(85, 87, 88, 0.15);
   border-radius: 20px;
   width: 270px;
   padding: 34px 20px 21px 20px;
+  // @media screen and (max-width: 1040) {
+  //   background: $white-color;
+  //   box-shadow: 0px 4px 20px rgba(85, 87, 88, 0.15);
+  //   border-radius: 20px;
+  //   width: 190px;
+  //   padding: 25px 16px 15px 16px;
+  // }
+}
+@media only screen and (max-width: 1040px) {
+  .sideMenuContainer {
+    background: $white-color;
+    box-shadow: 0px 4px 20px rgba(85, 87, 88, 0.15);
+    border-radius: 20px;
+    width: 220px;
+    padding: 25px 16px 15px 16px;
+  }
 }

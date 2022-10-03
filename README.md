@@ -1,46 +1,154 @@
-# Getting Started with Create React App
+# Project Title
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+EVENT REMAINDER :
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+Through this project, we can keep a reminder about the event with our company and where and how we can join the event, we can also go to make the meeting better. TypeScript has been used very well in this project and we can use reactRedux Tool kit to improve it.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+First of all I have installed all the dependencies used in it which will be found in JSON file. After that, by separating the whole site into different components, all the components have been made very slowly, I have used tpascript to avoid test cases
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Dependencies
 
-### `npm test`
+- "dependencies": {
+  "@testing-library/jest-dom": "^5.16.5",
+  "@testing-library/react": "^13.4.0",
+  "@testing-library/user-event": "^13.5.0",
+  "@types/jest": "^27.5.2",
+  "@types/node": "^16.11.62",
+  "@types/react": "^17.0.2",
+  "@types/react-dom": "^17.0.2",
+  "dayjs": "^1.11.5",
+  "prettier": "^2.7.1",
+  "react": "^17.0.2",
+  "react-dom": "^17.0.2",
+  "react-scripts": "5.0.1",
+  "sass": "^1.55.0",
+  "typescript": "^4.8.3",
+  "web-vitals": "^2.1.4"
+  },
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installing
 
-### `npm run build`
+npx create-react-app my-app --template typescript
+yarn create react-app my-app --template typescript
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm install --save-dev --save-exact prettier
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- For better formatting of our code, we have also installed Prettier, so that we can show the code pretty easily. -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Executing program
 
-### `npm run eject`
+- How to run the program
+  <!-- yarn start after installing all dependencies  -->
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  we can enter the command in terminal pannel
+  yarn start
+  npm start
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Step-by-step bullets
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+const HomePage = () => {
+  const [sideMenus, setSideMenus] = useState([]);
+  const [selectedMenu, setSelectedMenu] = useState(false);
+  const [eventList, setEventList] = useState([]);
+  const selectedId = 2;
+  const handleIsSelected = (id: any) => setSelectedMenu(id);
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  const getSideMenus = async () => {
+    try {
+      const res = await fetch('http://localhost:3000/CountryEvents.json');
+      const data = await res.json();
 
-## Learn More
+      return setSideMenus(data);
+    } catch (error) {
+      // console.log(error);
+    }
+  };
+  useEffect(() => {
+    (async () => {
+      await getSideMenus();
+      handleIsSelected(selectedId);
+    })();
+  }, []);
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  const handleEventList = (menuId: any) => {
+    const selectedMenuData: any = sideMenus.find(
+      (sideMenu: any) => sideMenu.id === menuId,
+    );
+    setEventList(selectedMenuData?.events);
+  };
+  useEffect(() => {
+    if (selectedMenu) handleEventList(selectedMenu);
+  }, [selectedMenu]);
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  return (
+    <div id="home_page" className={styles.homepageContainer}>
+      <PageHeaderComp />
+      <h1 className={styles.mainHeading}>Explore Our Events</h1>
+      <div className={styles.homePageContent}>
+        <SideMenu
+          onClick={handleIsSelected}
+          selectedMenu={selectedMenu}
+          sideMenus={sideMenus}
+        />
+
+        <div className={styles.productCards}>
+          {eventList?.map((eve: any) => (
+            <ProductCard key={eve?.id} {...eve} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+```
+
+## Help
+
+Any advise for common problems or issues.
+
+```
+command to run if program contains helper info
+```
+
+## Authors
+
+Contributors names and contact info
+
+Avinash Vishwakarma
+Github Account : https://github.com/avinash2507
+
+## Version History
+
+- 0.2
+  "@types/jest": "^27.5.2",
+  "@types/node": "^16.11.62",
+  "@types/react": "^17.0.2",
+  "@types/react-dom": "^17.0.2",
+  "dayjs": "^1.11.5",
+  "prettier": "^2.7.1",
+  "react": "^17.0.2",
+  "react-dom": "^17.0.2",
+  "react-scripts": "5.0.1",
+  "sass": "^1.55.0",
+  "typescript": "^4.8.3",
+- 0.1
+  - Initial Release
+
+## License
+
+This project is licensed under the [AVINASH] License - see the LICENSE.md file for details
+
+## Acknowledgments
+
+Inspiration, code snippets, etc.
+
+- [awesome-readme](https://github.com/matiassingers/awesome-readme)
+- [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+- [dbader](https://github.com/dbader/readme-template)
+- [avinash](https://gist.github.com/avinash2507)
+- [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
