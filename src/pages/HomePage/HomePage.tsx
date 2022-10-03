@@ -16,8 +16,9 @@ const HomePage = () => {
     try {
       const res = await fetch('http://localhost:3000/CountryEvents.json');
       const data = await res.json();
+      console.log(data);
 
-      return setSideMenus(data);
+      return setSideMenus([]);
     } catch (error) {
       // console.log(error);
     }
