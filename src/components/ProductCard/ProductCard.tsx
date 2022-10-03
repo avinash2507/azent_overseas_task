@@ -17,10 +17,12 @@ const ProductCard = ({ heading, image_url, timeStamp, meeting_type }: any) => {
       <CardComponent>
         <img
           src={image_url}
+          loading="lazy"
           onError={({ currentTarget }: any) => {
             currentTarget.onerror = null; // prevents looping
             currentTarget.src = './static/images/bg1.png';
           }}
+          width="318px"
           alt="Product Card"
           className={styles.cardImage}
         />

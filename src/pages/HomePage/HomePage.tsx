@@ -23,6 +23,7 @@ const HomePage = () => {
     }
   };
   useEffect(() => {
+    // iife
     (async () => {
       await getSideMenus();
       handleIsSelected(selectedId);
