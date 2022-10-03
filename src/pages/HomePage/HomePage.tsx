@@ -14,15 +14,15 @@ const HomePage = () => {
 
   const getSideMenus = async () => {
     try {
-      const res = await fetch('./CountryEvents.json');
+      const res = await fetch('http://localhost:3000/CountryEvents.json');
       const data = await res.json();
+
       return setSideMenus(data);
     } catch (error) {
       // console.log(error);
     }
   };
   useEffect(() => {
-    // iife
     (async () => {
       await getSideMenus();
       handleIsSelected(selectedId);
