@@ -61,7 +61,7 @@
     },
     "editor.accessibilitySupport": "off",
     "workbench.editorAssociations": {
-      "*.ipynb": "jupyter.notebook.ipynb"
+     
     },
     "git.autofetch": true,
     "[json]": {
@@ -85,9 +85,7 @@
     "[html]": {
       "editor.defaultFormatter": "vscode.html-language-features"
     },
-    "[python]": {
-      "gitlens.codeLens.symbolScopes": ["!Module"]
-    },
+  
     "eslint.alwaysShowStatus": true,
     "eslint.format.enable": true,
     "eslint.options": {},
